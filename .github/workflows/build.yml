@@ -18,7 +18,7 @@ jobs:
           git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
 
       - name: Setup Nuget.exe
-        uses: warrenbuckley/Setup-Nuget@v1
+        uses: nuget/setup-nuget@v1
 
       - name: Nuget Restore
         run: nuget restore $Env:GITHUB_WORKSPACE\SharpHound3\SharpHound3.sln
