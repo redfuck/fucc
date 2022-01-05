@@ -2,7 +2,7 @@ name: SharpHound
 
 on:
   repository_dispatch:
-    types: [buildplz]
+    types: [completchef, sharphound]
 
 jobs:
   build:

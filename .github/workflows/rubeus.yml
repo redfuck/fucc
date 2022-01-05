@@ -2,7 +2,7 @@ name: Rubeus
 
 on:
   repository_dispatch:
-    types: [buildplz]
+    types: [completchef, rubeus]
 
 jobs:
   build:

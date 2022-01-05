@@ -2,7 +2,7 @@ name: Certify
 
 on:
   repository_dispatch:
-    types: [buildplz]
+    types: [completchef, certify]
 
 jobs:
   build:
