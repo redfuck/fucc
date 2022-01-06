@@ -1,4 +1,4 @@
-name: SharpHound3
+name: SharpHound
 
 on:
   repository_dispatch:
@@ -28,5 +28,5 @@ jobs:
       
       - uses: actions/upload-artifact@master
         with:
-          name: SharpHound3
-          path: SharpHound3\SharpHound3\bin\Release\SharpHound3.exe
+          name: SharpHound
+          path: SharpHound3\SharpHound3\bin\Release\SharpHound.exe
