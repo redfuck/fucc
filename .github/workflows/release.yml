@@ -28,4 +28,5 @@ jobs:
         with:
           tag_name: "kebab"
           files: |
-            ${{ steps.binaries.outputs.BINARIES }}
+            .tmp/Certify.exe
+            .tmp/Rubeus.exe
