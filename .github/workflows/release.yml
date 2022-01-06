@@ -20,7 +20,7 @@ jobs:
       - name: Download Artifacts
         run: |
           pip install -r requirements.txt
-          paths=$(python my_script.py ${{ github.token }})
+          paths=$(python build/release.py ${{ github.token }})
           echo "::set-output name=BINARIES::$paths"
       - name: Push Release
         uses: softprops/action-gh-release@v1
