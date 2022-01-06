@@ -1,4 +1,4 @@
-name: SharpHound
+name: SharpHound3
 
 on:
   repository_dispatch:
