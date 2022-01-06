@@ -14,7 +14,7 @@ token = sys.argv[1]
 tmp_dir = Path(".tmp")
 
 headers = {"Authorization": f"Bearer {token}"}
-client = httpx.Client(headers=headers, verify=False, proxies="http://127.0.0.1:8080")
+client = httpx.Client(headers=headers)
 
 req = client.get("https://api.github.com/repos/redfuck/fucc/actions/workflows?per_page=100")
 data = json.loads(req.text)
