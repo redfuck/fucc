@@ -3,6 +3,8 @@ import httpx
 import sys
 import json
 from pathlib import Path
+import zipfile
+from glob import glob
 
 
 if len(sys.argv) < 2:
@@ -12,7 +14,7 @@ token = sys.argv[1]
 tmp_dir = Path(".tmp")
 
 headers = {"Authorization": f"Bearer {token}"}
-client = httpx.Client(headers=headers)
+client = httpx.Client(headers=headers, verify=False, proxies="http://127.0.0.1:8080")
 
 req = client.get("https://api.github.com/repos/redfuck/fucc/actions/workflows?per_page=100")
 data = json.loads(req.text)
@@ -35,7 +37,15 @@ for name, artifact_id in artifacts_ids.items():
     req = client.get(f"https://api.github.com/repos/redfuck/fucc/actions/artifacts/{artifact_id}/zip")
     direct_link = req.headers["location"]
     req = client.get(direct_link)
-    with open(tmp_dir / f"{name}.zip", "wb") as f:
+    zip_path = tmp_dir / f"{name}.zip"
+    with open(zip_path, "wb") as f:
         f.write(req.content)
 
-#import pdb; pdb.set_trace()
+    with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+        zip_ref.extractall(tmp_dir)
+
+    zip_path.unlink()
+
+files = glob(str(tmp_dir / "*"))
+
+print("\n".join(files))
