@@ -29,6 +29,15 @@ jobs:
         run: |
           pip install -r requirements.txt
           python build/release.py ${{ github.token }}
+          
+      - name: Deleting previous Release
+        uses: dev-drprasad/delete-tag-and-release@v0.2.0
+        with:
+          delete_release: true
+          tag_name: kebab
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          
       - name: Push Release
         uses: softprops/action-gh-release@v1
         with:
