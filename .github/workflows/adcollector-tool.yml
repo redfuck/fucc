@@ -29,4 +29,4 @@ jobs:
       - uses: actions/upload-artifact@master
         with:
           name: ADCollector
-          path: ADCollector\ADCollector3\bin\Release\ADCollector3.exe
+          path: ADCollector\ADCollector3\bin\Release\ADCollector.exe
