@@ -17,14 +17,14 @@ jobs:
         with:
           python-version: '3.10.1'
           architecture: 'x64'
+
       - name: Download Artifacts
         run: |
           pip install -r requirements.txt
-          paths=$(python build/release.py ${{ github.token }})
-          echo "::set-output name=BINARIES::$paths"
+          python build/release.py ${{ github.token }})
+
       - name: Push Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: "kebab"
-          files: |
-            ${{ steps.binaries.outputs.BINARIES }}
+          tag_name: kebab
+          files: .tmp/*
