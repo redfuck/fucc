@@ -16,3 +16,6 @@
 [submodule "StandIn"]
 	path = StandIn
 	url = https://github.com/FuzzySecurity/StandIn
+[submodule "SafetyKatz"]
+	path = SafetyKatz
+	url = https://github.com/GhostPack/SafetyKatz
