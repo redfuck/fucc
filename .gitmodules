@@ -10,3 +10,6 @@
 [submodule "Inveigh"]
 	path = Inveigh
 	url = https://github.com/Kevin-Robertson/Inveigh
+[submodule "Seatbelt"]
+	path = Seatbelt
+	url = https://github.com/GhostPack/Seatbelt
