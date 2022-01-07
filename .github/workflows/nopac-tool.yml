@@ -1,0 +1,32 @@
+name: noPac
+
+on:
+  repository_dispatch:
+    types: [completchef, nopac]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Checkout submodules
+        shell: bash
+        run: |
+          auth_header="$(git config --local --get http.https://github.com/.extraheader)"
+          git submodule sync --recursive
+          git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
+      - name: Setup Nuget.exe
+        uses: nuget/setup-nuget@v1
+
+      - name: Nuget Restore
+        run: nuget restore $Env:GITHUB_WORKSPACE\noPac\noPac.sln
+          
+      - name: Build noPac
+        run: |
+          cd "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\"
+          .\MSBuild.exe $Env:GITHUB_WORKSPACE\noPac\noPac\noPac.csproj /property:Configuration=Release
+      
+      - uses: actions/upload-artifact@master
+        with:
+          name: noPac
+          path: noPac\noPac\bin\Release\noPac.exe

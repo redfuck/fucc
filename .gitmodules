@@ -37,3 +37,6 @@
 [submodule "SharpMapExec"]
 	path = SharpMapExec
 	url = https://github.com/cube0x0/SharpMapExec
+[submodule "noPac"]
+	path = noPac
+	url = https://github.com/cube0x0/noPac
