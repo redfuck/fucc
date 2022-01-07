@@ -31,3 +31,6 @@
 [submodule "Lockless"]
 	path = Lockless
 	url = https://github.com/GhostPack/Lockless
+[submodule "ADCollector"]
+	path = ADCollector
+	url = https://github.com/dev-2null/ADCollector
