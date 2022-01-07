@@ -22,3 +22,6 @@
 [submodule "SharpUp"]
 	path = SharpUp
 	url = https://github.com/GhostPack/SharpUp
+[submodule "SharpWMI"]
+	path = SharpWMI
+	url = https://github.com/GhostPack/SharpWMI
