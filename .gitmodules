@@ -28,3 +28,6 @@
 [submodule "SharpDPAPI"]
 	path = SharpDPAPI
 	url = https://github.com/GhostPack/SharpDPAPI
+[submodule "Lockless"]
+	path = Lockless
+	url = https://github.com/GhostPack/Lockless
