@@ -47,6 +47,5 @@ for name, artifact_id in artifacts_ids.items():
     zip_path.unlink()
 
 files = glob(str(tmp_dir / "*"))
-client.delete("https://api.github.com/repos/redfuck/fucc/git/refs/tags/kebab")
 
 print("\n".join(files))
