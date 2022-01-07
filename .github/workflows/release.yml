@@ -2,7 +2,14 @@ name: Release
 
 on:
   repository_dispatch:
-    types: [completchef, release]
+    types: [release]
+  workflow_run:
+    workflows:
+      - SharpHound
+      - Rubeus
+      - Certify
+    types:
+      - completed
 
 jobs:
   build:
@@ -22,7 +29,6 @@ jobs:
         run: |
           pip install -r requirements.txt
           python build/release.py ${{ github.token }}
-
       - name: Push Release
         uses: softprops/action-gh-release@v1
         with:
