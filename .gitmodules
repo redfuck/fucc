@@ -13,3 +13,6 @@
 [submodule "Seatbelt"]
 	path = Seatbelt
 	url = https://github.com/GhostPack/Seatbelt
+[submodule "StandIn"]
+	path = StandIn
+	url = https://github.com/FuzzySecurity/StandIn
