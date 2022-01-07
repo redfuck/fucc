@@ -34,3 +34,6 @@
 [submodule "ADCollector"]
 	path = ADCollector
 	url = https://github.com/dev-2null/ADCollector
+[submodule "SharpMapExec"]
+	path = SharpMapExec
+	url = https://github.com/cube0x0/SharpMapExec
