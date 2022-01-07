@@ -21,7 +21,7 @@ jobs:
       - name: Download Artifacts
         run: |
           pip install -r requirements.txt
-          python build/release.py ${{ github.token }})
+          python build/release.py ${{ github.token }}
 
       - name: Push Release
         uses: softprops/action-gh-release@v1
