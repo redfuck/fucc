@@ -3,13 +3,6 @@ name: Release
 on:
   repository_dispatch:
     types: [release]
-  workflow_run:
-    workflows:
-      - SharpHound
-      - Rubeus
-      - Certify
-    types:
-      - completed
 
 jobs:
   build:
