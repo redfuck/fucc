@@ -1,8 +1,8 @@
-name: Standln
+name: StandIn
 
 on:
   repository_dispatch:
-    types: [completchef, standln]
+    types: [completchef, standin]
 
 jobs:
   build:
@@ -19,14 +19,14 @@ jobs:
         uses: nuget/setup-nuget@v1
 
       - name: Nuget Restore
-        run: nuget restore $Env:GITHUB_WORKSPACE\Standln\Standln\Standln.sln
+        run: nuget restore $Env:GITHUB_WORKSPACE\StandIn\StandIn\StandIn.sln
           
-      - name: Build Standln
+      - name: Build StandIn
         run: |
           cd "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\"
-          .\MSBuild.exe $Env:GITHUB_WORKSPACE\Standln\Standln\Standln\Standln.csproj /property:Configuration=Release
+          .\MSBuild.exe $Env:GITHUB_WORKSPACE\StandIn\StandIn\StandIn\StandIn.csproj /property:Configuration=Release
       
       - uses: actions/upload-artifact@master
         with:
-          name: Standln
-          path: Standln\Standln\Standln\bin\Release\Standln.exe
+          name: StandIn
+          path: StandIn\StandIn\StandIn\bin\Release\StandIn.exe
