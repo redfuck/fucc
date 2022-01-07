@@ -19,3 +19,6 @@
 [submodule "SafetyKatz"]
 	path = SafetyKatz
 	url = https://github.com/GhostPack/SafetyKatz
+[submodule "SharpUp"]
+	path = SharpUp
+	url = https://github.com/GhostPack/SharpUp
